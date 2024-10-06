@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "ap-south-1"
+  region = "eu-west-1"
 }
 
 resource "aws_vpc" "shubham_vpc" {
@@ -14,7 +14,7 @@ resource "aws_subnet" "shubham_subnet" {
   count = 2
   vpc_id                  = aws_vpc.shubham_vpc.id
   cidr_block              = cidrsubnet(aws_vpc.shubham_vpc.cidr_block, 8, count.index)
-  availability_zone       = element(["ap-south-1a", "ap-south-1b"], count.index)
+  availability_zone       = element(["eu-west-1a", "eu-west-1b"], count.index)
   map_public_ip_on_launch = true
 
   tags = {
