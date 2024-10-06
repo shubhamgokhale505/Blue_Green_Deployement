@@ -108,7 +108,7 @@ resource "aws_eks_node_group" "shubham" {
     min_size     = 3
   }
 
-  instance_types = ["t2.large"]
+  instance_types = ["t2.xlarge"]
 
   remote_access {
     ec2_ssh_key = var.ssh_key_name
